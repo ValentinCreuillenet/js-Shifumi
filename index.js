@@ -22,18 +22,41 @@ var mancheParPartie = 3;
 //Cette fonction s'execute quand on appuie sur le bouton "Jouer!"
 //Elle recupère les valeur selectionées par es joueurs et les compares ensuite
 function shifumi() {
+
   //On recupère les tableaux avec les slections des joueurs
-  var select1 = document.getElementById("j1");
-  var select2 = document.getElementById("j2");
+  let select1 = document.getElementById("j1");
+  let select2 = document.getElementById("j2");
+
   //On recupère les index des options selectionées
-  var index1 = select1.selectedIndex;
-  var index2 = select2.selectedIndex;
+  let index1 = select1.selectedIndex;
+  let index2 = select2.selectedIndex;
+
   //On affecte le choix des jouerus a des variables
-  var j1 = select1[index1].value;
-  var j2 = select2[index2].value;
+  let j1 = select1[index1].value;
+  let j2 = select2[index2].value;
 
   //Et on apelle la fonction qui compare ces résultats
   return compareResults(j1, j2);
+}
+
+
+
+//Cette fonction s'execute quand on appuie sur le bouton "jouer contre l'ordinateur!"
+//Elle récupère la valeur sellectioné par le joueur1  et la compare contre une valeur aléatoire
+function shifumiRandom(){
+
+//On réupère la valeur selectioné par le jouer 1
+let select1 = document.getElementById("j1").value;
+
+//On génère un nombre aléatoire entre 0 et 2
+let randomIndex = Math.floor(Math.random() * 3);
+//Et on va chercher la valeur qui correspond ace nombre aléatoire
+let randomSelect = document.getElementById("j2")[randomIndex].value;
+
+//On affiche ce que l'ordinateur a choisit
+document.getElementById("choix").innerText = "L'ordinateur a choisit " + randomSelect;
+
+return compareResults(select1,randomSelect);
 }
 
 // Cette fonctionest utilisée pour comparer les résultats fournis par le HTML
@@ -149,4 +172,9 @@ function updateScore(winner) {
 //On récupère les valeur et on les compare quand on clique sur le bouton "Jouer!"
 document.getElementById("jouer").addEventListener("click", event => {
   shifumi();
-});
+})
+//On récupère la valeur selectioné par le joueur 1 et génère on valeur aléatoire quand on appuie
+//sur le bouton "Jouer contre l'ordinateur!"
+document.getElementById("ordinateur").addEventListener("click", event => {
+  shifumiRandom();
+})
