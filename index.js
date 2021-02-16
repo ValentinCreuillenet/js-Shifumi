@@ -64,6 +64,7 @@ return compareResults(select1,randomSelect);
 function compareResults(result1, result2) {
   //Cette varaible sert à stocker notre résultat et plus tard a l'afficher
   let result = "";
+  //Ces variables servent a mettre notre message de résultat en fonction du résultat
   let draw = "Égalité!";
   let win1 = "Joueur 1 gagne un point!";
   let win2 = "Joueur 2 gagne un point!";
@@ -79,7 +80,7 @@ function compareResults(result1, result2) {
     if (result2 == "feuille") {
       result = win2;
 
-      //Si le joueur 2 a joué ciseaux c'est le joueur 1 qui gagne
+    //Si le joueur 2 a joué ciseaux c'est le joueur 1 qui gagne
     } else if (result2 == "ciseaux") {
       result = win1;
     }
@@ -91,7 +92,7 @@ function compareResults(result1, result2) {
     if (result2 == "pierre") {
       result = win1;
 
-      //Si le joueur 2 a joué ciseaux c'est le joueur 2 qui gagne
+    //Si le joueur 2 a joué ciseaux c'est le joueur 2 qui gagne
     } else if (result2 == "ciseaux") {
       result = win2;
     }
@@ -103,7 +104,7 @@ function compareResults(result1, result2) {
     if (result2 == "feuille") {
       result = win1;
 
-      //Si le joueur 2 a joué pierre c'est le joueur 2 qui gagne
+    //Si le joueur 2 a joué pierre c'est le joueur 2 qui gagne
     } else if (result2 == "pierre") {
       result = win2;
     }
@@ -184,4 +185,12 @@ document.getElementById("scoreRange").addEventListener("click", event => {
   pointsParManche = document.getElementById("scoreRange").value;
   document.getElementById("scoreRangeLabel").innerText = 
   "Nombre de points pour gagner une manche ("+pointsParManche+")";
+})
+
+//On met a jour le nombre de manche nécessaire a gagner pour remporter la partier quand 
+//on clique sur le slider correspondant
+document.getElementById("mancheRange").addEventListener("click", event => {
+  mancheParPartie = document.getElementById("mancheRange").value;
+  document.getElementById("mancheRangeLabel").innerText = 
+  "Nombre de manches pour gagner la partie ("+mancheParPartie+")";
 })

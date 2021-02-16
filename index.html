@@ -18,18 +18,24 @@
 </select>
 <br>
 <br>
+
 <!--On crée un slider qui permet au joueur de choisir le le nombre de points pour gagner une manche-->
   <label for="scoreRange" id="scoreRangeLabel">Nombre de points pour gagner une manche (3) </label>
   <input  type="range" min="1" max="10" value="3" class="slider" id="scoreRange">
-<!--Affichage du scor des joueurs-->
+<br>
+<!--On crée un slider qui permet au joueur de choisir le le nombre de manches pour gagner la partie-->
+  <label for="mancheRange" id="mancheRangeLabel">Nombre de manches pour gagner la partie (3) </label>
+  <input  type="range" min="1" max="10" value="3" class="slider" id="mancheRange">
+
+<!--Affichage du score des joueurs-->
 <p id="score"> Score : 0-0 </p>
 <p id="manche"> Manches : 0-0 </p>
 <br>
 
-<!--Le boutton jouer, on utilise le click comme évenement-->
+<!--Le boutton jouer, on utilise le click comme évenement pour lancer un affrontement entre les deux joueurs-->
 <button id="jouer" type="button">Jouer!</button>
 
-<!--Le boutton jouer, on utilise le click comme évenement-->
+<!--Le boutton jouer contre l'ordinateur, on utilise le click comme évenement pour lancer un affrontement contre l'rdinateur-->
 <button id="ordinateur" type="button">Jouer contre l'ordinateur!</button>
 
 <!--Le text qu'on affiche en fonction du résultat-->
