@@ -139,7 +139,7 @@ function updateScore(winner) {
     //Si le joueur 1 remporte la manche, on l'affiche
     document.getElementById("resultat").innerHTML = "Le joueur 1 remporte la manche!";
 
-  } else if(score2===pointsParManche){
+  } else if(score2==pointsParManche){
     score1=0;
     score2=0;
     manche2++;
@@ -177,4 +177,11 @@ document.getElementById("jouer").addEventListener("click", event => {
 //sur le bouton "Jouer contre l'ordinateur!"
 document.getElementById("ordinateur").addEventListener("click", event => {
   shifumiRandom();
+})
+
+//On met a jour les scores nécessaire pour gagner quand on clique sur le slider correspondant
+document.getElementById("scoreRange").addEventListener("click", event => {
+  pointsParManche = document.getElementById("scoreRange").value;
+  document.getElementById("scoreRangeLabel").innerText = 
+  "Nombre de points pour gagner une manche ("+pointsParManche+")";
 })

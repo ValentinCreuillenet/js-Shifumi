@@ -2,7 +2,7 @@
 
 
 <!--Le select du joueur 1-->
-<label for="j1">Joueur 1:</label>
+<label for="j1">Joueur  1: </label>
 <select id="j1" name="choice" size="2">
   <option value="pierre">Pierre</option>
   <option value="feuille">Feuille</option>
@@ -10,13 +10,17 @@
 </select>
 
 <!--Le select du joueur 2-->
-<label for="j2">Joueur 2:</label>
+<label for="j2">Joueur 2 : </label>
 <select id="j2" name="choice" size="2">
   <option value="pierre">Pierre</option>
   <option value="feuille">Feuille</option>
   <option value="ciseaux">Ciseaux</option>
 </select>
 <br>
+<br>
+<!--On crée un slider qui permet au joueur de choisir le le nombre de points pour gagner une manche-->
+  <label for="scoreRange" id="scoreRangeLabel">Nombre de points pour gagner une manche (3) </label>
+  <input  type="range" min="1" max="10" value="3" class="slider" id="scoreRange">
 <!--Affichage du scor des joueurs-->
 <p id="score"> Score : 0-0 </p>
 <p id="manche"> Manches : 0-0 </p>
